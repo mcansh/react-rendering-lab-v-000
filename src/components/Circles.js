@@ -2,16 +2,11 @@ import React from 'react';
 import Circle from './Circle';
 
 class Circles extends React.Component {
-
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      circles: [
-        { color: 'red' },
-        { color: 'yellow' },
-        { color: 'green' },
-      ]
+      circles: [{ color: 'red' }, { color: 'yellow' }, { color: 'green' }]
     };
   }
 
@@ -21,14 +16,14 @@ class Circles extends React.Component {
       if (circle.color === 'green') return { color: 'red' };
       return circle;
     });
-    console.log("\n💥 Red and green were swapped!");
+    console.log('\n💥 Red and green were swapped!');
     this.setState({ circles: newCircles });
-  }
+  };
 
   render() {
-    const renderCircles = this.state.circles.map((circle, index) => 
-      <Circle color={circle.color} key={index} /> 
-    );
+    const renderCircles = this.state.circles.map((circle, index) => (
+      <Circle color={circle.color} key={index} />
+    ));
 
     return (
       <div>
